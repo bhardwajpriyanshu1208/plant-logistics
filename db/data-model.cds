@@ -1,7 +1,3 @@
-namespace my.bookshop;
+namespace PlantLogistics;
 
-entity Books {
-  key ID : Integer;
-  title  : String;
-  stock  : Integer;
-}
+
