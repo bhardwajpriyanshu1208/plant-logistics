@@ -1,3 +1,0 @@
-parent,name,type,size,data,url
-1,image1.jpg,Image,1024,base64data1,https://example.com/image1
-2,image2.jpg,Image,2048,base64data2,https://example.com/image2

@@ -9,47 +9,58 @@ using {
 namespace PlantLogistics;
 
 entity Drivers : cuid, managed {
-    name                  : localized String;
-    driverImage           : String;
-    gender                : String;
-    email                 : String;
-    mobileNo              : String;
-    bloodGroup            : String;
-    dateOfBirth           : DateTime;
-    drivingLicenseNo      : String;
-    licenseType           : String;
-    licenseIssueDate      : DateTime;
-    licenseValidityDate   : DateTime;
-    insurancePolicyNo     : String;
-    insuranceValidityDate : DateTime;
-    permanentAddress      : Association to one Address;
-    currentAddress        : Association to one Address;
-    vendorName            : String;
-    dateOfJoining         : DateTime;
-    dateOfLeaving         : DateTime;
-    isActive              : Boolean;
-    isBlocked             : Boolean;
-    blockingReason        : String;
-    blockedBy             : String;
-    blockedOn             : DateTime;
-    attachments           : Composition of many Attachment
-                                on attachments.parent = $self;
+    firstName             :      localized String;
+    lastName              :      localized String;
+    name                  :      String = (
+        firstName || ' ' || lastName
+    );
+    driverImage           :      String;
+    gender                :      String enum {
+        Male;
+        Female;
+        Other
+    };
+    email                 :      String;
+    mobileNo              :      String;
+    bloodGroup            :      String;
+    dateOfBirth           :      Date;
+    drivingLicenseNo      :      String;
+    licenseType           :      String;
+    licenseIssueDate      :      Date;
+    licenseValidityDate   :      Date;
+    insurancePolicyNo     :      String;
+    insuranceValidityDate :      Date;
+    permanentAddress      :      Address;
+    currentAddress        :      Address;
+    vendorName            :      String;
+    dateOfJoining         :      Date;
+    dateOfLeaving         :      Date;
+    isActive              :      Boolean;
+    isBlocked             :      Boolean;
+    blockingReason        :      String;
+    blockedBy             :      String;
+    blockedOn             :      DateTime;
+    attachments           : many Attachment;
 }
 
-entity Address : cuid, managed {
-        addressLine1 : localized String;
-        addressLine2 : String;
-        city         : String;
-        state        : String;
-        country      : Country;
-        pincode      : String;
+type Address {
+    addressLine1 : localized String;
+    addressLine2 : localized String;
+    city         : localized String;
+    state        : String;
+    country      : Country;
+    pincode      : String;
 }
 
-entity Attachment : cuid, managed {
-    key parent : Association to Drivers;
-        name   : String;
-        type   : String;
-        size   : Integer;
-        data   : Binary;
-        url    : String;
+type Attachment {
+    name : String;
+    type : String;
+    size : Integer;
+    data : Binary;
+    url  : String;
+}
+
+entity Pictures : cuid {
+    @Core.MediaType: 'image/png'
+    content : LargeBinary;
 }
