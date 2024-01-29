@@ -14,7 +14,7 @@ entity Drivers : cuid, managed {
     name                  :      String = (
         firstName || ' ' || lastName
     );
-    driverImage           :      String;
+    driverImage           :      String  @Core.IsURL  @Core.MediaType: 'image/png';
     gender                :      String enum {
         Male;
         Female;
@@ -58,9 +58,4 @@ type Attachment {
     size : Integer;
     data : Binary;
     url  : String;
-}
-
-entity Pictures : cuid {
-    @Core.MediaType: 'image/png'
-    content : LargeBinary;
 }
