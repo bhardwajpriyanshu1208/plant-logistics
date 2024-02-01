@@ -6,6 +6,8 @@ using {
     Language
 } from '@sap/cds/common';
 
+using Regions from './common-data';
+
 namespace PlantLogistics;
 
 entity Drivers : cuid, managed {
@@ -14,7 +16,7 @@ entity Drivers : cuid, managed {
     name                  :      String = (
         firstName || ' ' || lastName
     );
-    driverImage           :      String  @Core.IsURL  @Core.MediaType: 'image/png';
+    driverImage           :      String;
     gender                :      String enum {
         Male;
         Female;
@@ -22,10 +24,15 @@ entity Drivers : cuid, managed {
     };
     email                 :      String;
     mobileNo              :      String;
-    bloodGroup            :      String;
+    bloodGroup            :      String ;
     dateOfBirth           :      Date;
     drivingLicenseNo      :      String;
-    licenseType           :      String;
+    licenseType           :      String enum {
+        LMV;
+        HMV;
+        MCWG;
+        MCWOG
+    };
     licenseIssueDate      :      Date;
     licenseValidityDate   :      Date;
     insurancePolicyNo     :      String;
@@ -47,7 +54,7 @@ type Address {
     addressLine1 : localized String;
     addressLine2 : localized String;
     city         : localized String;
-    state        : String;
+    state        : Region;
     country      : Country;
     pincode      : String;
 }
@@ -56,6 +63,7 @@ type Attachment {
     name : String;
     type : String;
     size : Integer;
-    data : Binary;
     url  : String;
 }
+
+type Region : Association to Regions;

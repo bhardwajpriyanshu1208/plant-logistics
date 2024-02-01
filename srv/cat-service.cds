@@ -1,6 +1,9 @@
 using PlantLogistics as my from '../db/data-model';
 
 service CatalogService {
+    @Capabilities.Deletable
+    @Capabilities.Insertable
+    @Capabilities.Updatable
     @odata.draft.enabled
     entity Drivers as projection on my.Drivers;
 }

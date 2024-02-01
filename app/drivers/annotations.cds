@@ -1,5 +1,6 @@
 using CatalogService as service from '../../srv/cat-service';
 
+annotate service.Drivers with  @fiori.draft.enabled;
 
 annotate service.Drivers with {
     title @title: 'Title';
@@ -203,11 +204,11 @@ annotate service.Drivers with @(
                 Label: 'City',
                 Value: permanentAddress_city,
             },
-            {
-                $Type: 'UI.DataField',
-                Label: 'State',
-                Value: permanentAddress_state,
-            },
+            // {
+            //     $Type: 'UI.DataField',
+            //     Label: 'State',
+            //     Value: permanentAddress_state,
+            // },
             // {
             //     $Type: 'UI.DataField',
             //     Label: 'Country',
@@ -239,11 +240,11 @@ annotate service.Drivers with @(
                 Label: 'City',
                 Value: currentAddress_city,
             },
-            {
-                $Type: 'UI.DataField',
-                Label: 'State',
-                Value: currentAddress_state,
-            },
+            // {
+            //     $Type: 'UI.DataField',
+            //     Label: 'State',
+            //     Value: currentAddress_state,
+            // },
             // {
             //     $Type: 'UI.DataField',
             //     Label: 'Country',

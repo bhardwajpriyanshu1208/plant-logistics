@@ -16,7 +16,10 @@
     "devDependencies": {
         "@cap-js/sqlite": "^1",
         "@sap/cds-dk": "^7",
-        "@sap/ux-specification": "^1.120.1",
+        "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+        "@sap/ux-specification": "^1.120.2",
+        "@sapui5/ts-types": "^1.92.2",
+        "eslint": "^7.32.0",
         "rimraf": "^3.0.2"
     },
     "scripts": {
@@ -35,6 +38,7 @@
         }
     },
     "sapux": [
+        "app/drivers",
         "app/drivers"
     ]
 }

@@ -1,19 +1,19 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Fri Jan 05 2024 15:08:11 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Tue Jan 30 2024 09:46:31 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
-|**App Generator Version**<br>1.12.1|
+|**App Generator Version**<br>1.12.2|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/catalog/
 |**Module Name**<br>drivers|
-|**Application Title**<br>Manage Drivers|
+|**Application Title**<br>Drivers|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.120.4|
-|**Enable Code Assist Libraries**<br>False|
+|**Enable Code Assist Libraries**<br>True|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
 |**Main Entity**<br>Drivers|
@@ -21,7 +21,7 @@
 
 ## drivers
 
-A Fiori application.
+Manage Drivers
 
 ### Starting the generated app
 
